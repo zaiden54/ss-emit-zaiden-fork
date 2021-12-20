@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Helvetica';
+  src: url();
+}
+
+body {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background: black;
+
+  padding: 40px;
+}
+
+.logo img{
+  width: 76px;
+}
+
+.navbar {
+  justify-content: center;
+  display: flex;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.menu {
+  align-items: center;
+  display: flex;
+}
+
+.menu ul {
+  cursor: pointer;
+}
+
+.menu ul:hover {
+  color: red;
+}
