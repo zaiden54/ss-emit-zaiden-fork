@@ -1,7 +1,9 @@
 import React from 'react'
-
+import menuBurger from '../media/icons/burger-menu-icon.png'
 
 export const Navbar = () => {
+
+
     return(
         <div className="navbar">
             <div className="logo">
@@ -16,6 +18,12 @@ export const Navbar = () => {
                 <ul className="menu__item">ПАРТНЕРЫ</ul>
                 <ul className="menu__item">ЛИЧНЫЙ КАБИНЕТ</ul>
             </li>
+
+            <div className="burger-menu">
+                <div className="burger-menu__btn">
+                    <img src={menuBurger} alt="" className="burger-icon" />
+                </div>
+            </div>
         </div>
     )
 }
