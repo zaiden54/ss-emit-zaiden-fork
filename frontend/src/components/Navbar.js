@@ -3,7 +3,6 @@ import menuBurger from '../media/icons/burger-menu-icon.png'
 
 export const Navbar = () => {
 
-
     return(
         <div className="navbar">
             <div className="logo">
