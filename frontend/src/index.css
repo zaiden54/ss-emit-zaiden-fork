@@ -35,6 +35,8 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+
+a {color: white}
 /*--------------------*/
 
 
@@ -106,7 +108,7 @@ body {
 /* Navbar adaptive */
 
 
-@media screen and (max-device-width: 1140px){
+@media screen and (max-width: 1140px){
   .menu{
     display: none;
   }
@@ -114,37 +116,42 @@ body {
   .burger-menu {
     display: block;
   }
-  
+
 }
 
-/* Slider */c
+/* Slider */
 
 
 /* News */
-
 .news-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-container {
   margin: 0 auto;
   min-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
 }
 
-.news__title {
+.news__header {
   text-transform: uppercase;
-  position: relative;
   left: 330px;
   font-weight: 550;
   font-size: 28px;
-  margin-bottom: 70px;  
+  margin-bottom: 60px;
+  width: 1000px;  
 }
 
 .news__card {
   width: 615px;
-  height: 345px;
-  border-radius: 40px;
+  min-height: 345px;
+  border-radius: 30px;
   overflow: hidden;
+  word-break: break-word;
   display: flex;
   align-items: flex-end;
   padding: 45px;
@@ -154,12 +161,50 @@ body {
 
 
 .news-title {
-  font-weight: 550;
+  font-weight: 350;
   font-size: 30px;
+  line-height: 34px;
 }
 
 .news-hashtag {
-  font-weight: 300;
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-weight: 200;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.news__other {
+  margin: 40px 0 100px 0;
+  text-transform: uppercase;
+  width: 1000px;  
+  display: flex;
+  align-items: center;
+}
+
+.news__other p{
+  display: inline-block;
+  margin-right: 5px;
+}
+.news__other::after {
+  content: "";
+  display: inline-block;
+  background: url('./media/icons/Vector.png') center/auto 100%  no-repeat;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* News adaptive */
+
+@media screen and (max-width: 1140px) {
+  .news__header {
+    width: auto;  
+  }
+
+  .news__other {
+    width: auto;
+  }
+
+  .news__card {
+    width: 315px;
+  }
 }

@@ -21,12 +21,17 @@ export const News = () => {
 
     return(
         <div className="news-block">
-            <div className="news__title">
+            <div className="news__header">
                 Новости
             </div>
 
-            {renderNews(news)}
+            <div className="news-container">
+                {renderNews(news)}
+            </div>
 
+            <div className="news__other">
+                <a href="/news"><p>ДРУГИЕ НОВОСТИ</p></a>
+            </div>
         </div>
     )
 
