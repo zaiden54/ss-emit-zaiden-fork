@@ -109,6 +109,7 @@ body {
 
 
 @media screen and (max-width: 1140px){
+
   .menu{
     display: none;
   }
@@ -206,5 +207,76 @@ body {
 
   .news__card {
     width: 315px;
+  }
+}
+
+/* Occasions */
+
+.events {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.events-title {
+  text-transform: uppercase;
+  font-weight: 550;
+  font-size: 28px;
+  margin-bottom: 60px;
+}
+
+.events-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
+}
+
+.events-card {
+  width: 300px;
+  margin-bottom: 40px;
+}
+
+.events-appointment {
+  display: flex;
+  justify-content: space-between;
+  color: #9E9E9E;
+  font-size: 13px;
+}
+
+.event-title {
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.events-other {
+  margin: 40px 0 100px 0;
+  display: flex;
+  margin-right: 5px;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.events-other::after {
+  content: "";
+  display: inline-block;
+  background: url('./media/icons/Vector.png') center/auto 100%  no-repeat;
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Occasions adaptive */
+
+@media screen and (max-width: 1140px) {
+
+  .events {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .events-cards {
+    max-width: 300px;
   }
 }
