@@ -143,7 +143,7 @@ body {
   text-transform: uppercase;
   left: 330px;
   font-weight: 550;
-  font-size: 28px;
+  font-size: 40px;
   margin-bottom: 60px;
   width: 1000px;  
 }
@@ -221,7 +221,7 @@ body {
 .events-title {
   text-transform: uppercase;
   font-weight: 550;
-  font-size: 28px;
+  font-size: 40px;
   margin-bottom: 60px;
 }
 
@@ -354,3 +354,61 @@ body {
   }
 }
 
+/* Banner loop */
+
+.loop-text {
+  position: relative;
+  margin-bottom: 120px;
+  animation: loop-text infinite linear 10s;
+}
+
+@keyframes loop-text {
+  0% {
+    right: 1250px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+/* Scroll menu */
+
+.scroll-menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: auto;
+  margin: 0 auto 120px auto
+  
+}
+
+.scroll-menu-header {
+  font-size: 90px;
+  line-height: 90px;
+  width: 800px;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.scroll-menu-container {
+  overflow: hidden;
+}
+
+.scroll-menu-options {
+  position: relative;
+  height: 500px;
+  overflow-y: scroll;
+  right: -17px;
+}
+
+.scroll-menu-item {
+  margin-bottom: 120px;
+  font-size: 40px;
+  line-height: 40px;
+}
