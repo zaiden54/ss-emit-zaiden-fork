@@ -61,13 +61,6 @@ export const Footer = () => {
                 <div className="footer-copyright-item"><p>&copy; Студенческий совет ЭМИТ РАНХиГС. Все права защищены.</p></div>
             </div>
         </div>
-        
-        /* <div className="footer-contacts">
-            <div className="footer-contacts-item"><img src={VK} alt="" /></div>
-            <div className="footer-contacts-item"><img src={Inst} alt="" /></div>
-            <div className="footer-contacts-item"><a href="mailto:zaiden.ranepa@gmail.com"><p>ssemit@gmail.com</p></a></div>
-            <div className="footer-contacts-item"><a href="tel:+79822748010"><p>+7(777)777-77-77</p></a></div>
-        </div> */
     )
 
 }
