@@ -3,6 +3,7 @@ import React from 'react'
 import { Slider } from '../components/Slider'
 import { News } from '../components/News'
 import { Events } from '../components/Events'
+import { Footer } from '../components/Footer'
 
 export const MainPage = () => {
     return(
@@ -10,6 +11,7 @@ export const MainPage = () => {
             <Navbar />
             <News />
             <Events />
+            <Footer />
         </div>
     )
 }
