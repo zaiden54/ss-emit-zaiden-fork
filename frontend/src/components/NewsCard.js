@@ -6,7 +6,7 @@ import React from 'react'
 export const NewsCard = (props) => {
 
     const cardStyle = {
-        background: 'url(' + props.image + ')'
+        background: 'url(' + props.image + ') 50% 50%/auto 100% no-repeat'
     }
 
     return (

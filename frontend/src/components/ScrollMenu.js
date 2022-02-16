@@ -21,7 +21,7 @@ export const ScrollMenu = () => {
                     ЭМИТ
                 </p>
             </div>
-            
+
             <div className="arrow">
                 <img src={arrow} alt="" />
             </div>
@@ -30,7 +30,7 @@ export const ScrollMenu = () => {
                 
                 <div className="scroll-menu-options">
                     <div className="scroll-menu-item"><a href="">НАПРАВЛЕНИЯ ПРОЕКОВ</a></div>
-                    <div className="scroll-menu-item"><a href="">ПРОЕКТЫ</a></div>
+                    <div className="scroll-menu-item"><a href="/projects">ПРОЕКТЫ</a></div>
                     <div className="scroll-menu-item"><a href="">МЕРОПРИЯТИЯ</a></div>
                     <div className="scroll-menu-item"><a href="">ЦЕНТРЫ</a></div>
                     <div className="scroll-menu-item"><a href="">НАША ИСТОРИЯ</a></div>
