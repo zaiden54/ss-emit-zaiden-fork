@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import arrow from '../media/images/arrow.svg'
 
 export const ScrollMenu = () => {
 
+    const [menuItem, setMenuItem] = useState(1)
+
+    const handleMenuItem = (num) => {
+        
+    }
+
     return (
+
+        
+
         <div className="scroll-menu">
             <div className="scroll-menu-header">
                 <p>
@@ -25,6 +34,7 @@ export const ScrollMenu = () => {
                     <div className="scroll-menu-item"><a href="">НАША ИСТОРИЯ</a></div>
                     <div className="scroll-menu-item"><a href="">АКТИВ ЭМИТ</a> </div>
                 </div>
+                
             </div>
         </div>
     )

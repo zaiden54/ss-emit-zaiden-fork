@@ -79,7 +79,7 @@ body {
   display: flex;
 }
 
-.menu ul {
+.menu li {
   cursor: pointer;
   margin-right: 53px;
   white-space: nowrap;
@@ -99,6 +99,7 @@ body {
 
 .burger-menu {
   display: none;
+  cursor: pointer;
 }
 
 .burger-menu__btn img{
@@ -119,6 +120,45 @@ body {
     display: block;
   }
 
+}
+
+
+/* Sidenav */
+
+.sidenav{
+  padding: 50px;
+  position: fixed;
+  background: #CB0A00;
+  z-index: 2;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  transition: all .5s ease-in-out;
+}
+
+.close-sidenav {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.sidenav-item{
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+  transition: all .2s ;
+}
+
+.sidenav-item:hover{
+  transform: scale(1.03);
+  transition: all .2s ;
+}
+
+.sidenav-active {
+  transition: all .5s ease-in-out;
+  left: 0;
 }
 
 /* Slider */
@@ -412,3 +452,107 @@ body {
   font-size: 40px;
   line-height: 40px;
 }
+/* Useful */
+
+.useful-main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+}
+
+
+.useful-rectangle {
+  width: 530px;
+  height: 340px;
+  background-color: #FFFFFF;
+  border-radius: 40px;
+  margin-bottom: 30px;
+}
+
+.useful-rectangle-heading p {
+  font-size: 30px;
+  line-height: 30px;
+  font-style: normal;
+  font-weight: 550;
+  text-transform: uppercase;
+}
+
+.useful-heading {
+  margin-bottom: 70px;
+}
+.useful-heading p {
+  font-style: normal;
+  font-weight: 550;
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.useful-item {
+  margin-bottom: 130px;
+  display: flex;
+  max-width: 100%;
+}
+
+.useful-item:last-child {
+  justify-content: flex-end;
+}
+
+.useful-item:first-child {
+  justify-content: flex-start;
+}
+
+.useful-item:last-child p {
+  text-align: right;
+}
+
+.useful-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.rectangle-text-container {
+  font-style: normal;
+  font-weight: 550;
+  font-size: 25px;
+  line-height: 25px;
+  text-transform: uppercase;
+
+  margin: 50px 50px auto;
+
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+
+.rectangle-text-container div {
+  display: inline-block;
+}
+
+.rectangle-text-item {
+  margin-right: 20px;
+}
+
+.useful-item:last-child .rectangle-text-container{
+  justify-content: right;
+}
+
+/* Useful Adaptive */
+
+@media screen and (max-width: 1025px) {
+  .useful-rectangle {
+    width: 300px;
+  }
+
+  .useful-main {
+    align-items: center;
+  }
+
+  .useful-block {
+    align-items: center;
+  }
+}
+
+
+

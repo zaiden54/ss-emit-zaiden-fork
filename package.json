@@ -1,0 +1,20 @@
+{
+  "name": "ss-emit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm start --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snickersnasian/ss-emit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snickersnasian/ss-emit/issues"
+  },
+  "homepage": "https://github.com/snickersnasian/ss-emit#readme"
+}

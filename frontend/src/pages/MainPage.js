@@ -4,6 +4,8 @@ import { Slider } from '../components/Slider'
 import { News } from '../components/News'
 import { Events } from '../components/Events'
 import { Footer } from '../components/Footer'
+import { Useful } from '../components/Useful'
+
 
 export const MainPage = () => {
     return(
@@ -11,6 +13,7 @@ export const MainPage = () => {
             <Navbar />
             <News />
             <Events />
+            <Useful />
             <Footer />
         </div>
     )
