@@ -21,9 +21,11 @@ export const ScrollMenu = () => {
                     ЭМИТ
                 </p>
             </div>
+            
             <div className="arrow">
                 <img src={arrow} alt="" />
             </div>
+
             <div className="scroll-menu-container">
                 
                 <div className="scroll-menu-options">
