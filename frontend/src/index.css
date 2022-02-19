@@ -55,7 +55,7 @@ body {
   line-height: 18px;
   color: #FFFFFF;
   background: black;
-
+  overflow-x: hidden;
   padding: 40px;
 }
 
@@ -599,18 +599,17 @@ body {
 }
 
 .projects-card{
-  
   display: flex;
   margin-bottom: 150px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
-
 .projects-thumb {
-  max-width: 715px;
+  width: 715px;
   min-width: 400px;
   min-height: 445px;
   border-radius: 30px;
-  margin-right: 100px;
+  margin: 0 100px 50px 0;
   flex-grow: 1;
 }
 
@@ -649,3 +648,20 @@ body {
   justify-content: center;
   font-size: 15px;
 }
+
+/* Projects adaptive */
+
+@media screen and (max-width: 755px) {
+  .projects-thumb {
+    min-width: 300px;
+    width: auto;
+    margin: 0 0 50px 0;
+  }
+
+  .projects-description {
+    width: auto;
+  }
+
+}
+
+
