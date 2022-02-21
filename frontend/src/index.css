@@ -254,7 +254,8 @@ body {
   }
 
   .news__card {
-    width: 315px;
+    width: auto;
+    margin-right: 0;
   }
 }
 
@@ -403,7 +404,14 @@ body {
 
 /* Banner loop */
 
-.loop-text {
+.loop-text{
+  position: relative;
+  left: -40px;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.loop-text img{
   position: relative;
   margin-bottom: 120px;
   animation: loop-text infinite linear 10s;
