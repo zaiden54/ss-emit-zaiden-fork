@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react"
 import { EventsCard } from "./EventsCard"
-import axios from 'axios'
+import {useHttp} from '../hooks/http.hooks'
 
 export const Events = () => {
 
     const [occasions, setOccasions] = useState([])
-
+    const { loading, request, error, clearError } = useHttp()
 
     const displayEvents = (occasions) => {
         return (
@@ -28,8 +28,8 @@ export const Events = () => {
     }
 
     useEffect( async() => {
-        const res = await axios.get('/api/content/occasions')
-        setOccasions(res.data)
+        const res = await request('/api/content/occasions')
+        setOccasions(res)
     }, [])
 
     return (

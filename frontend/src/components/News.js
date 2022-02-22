@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { NewsCard } from './NewsCard'
-import axios from 'axios'
+import {useHttp} from '../hooks/http.hooks'
 
 export const News = () => {
-    
+
+    const { loading, request, error, clearError } = useHttp()
+
     const [news, setNews] = useState([])
 
     const renderNews = (news) => {
@@ -20,8 +22,9 @@ export const News = () => {
     }
 
     useEffect( async () => {
-        const res = await axios.get('/api/content/news')
-        setNews(res.data)
+        const res = await request('/api/content/news')
+        console.log(res)
+        setNews(res)
     }, [])
     
 
