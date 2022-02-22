@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { NewsCard } from './NewsCard'
-import news from '../testDB/news.json'
+import axios from 'axios'
 
 export const News = () => {
     
+    const [news, setNews] = useState([])
 
     const renderNews = (news) => {
         return news.map((item, index) => {
@@ -17,6 +18,11 @@ export const News = () => {
             )
         })
     }
+
+    useEffect( async () => {
+        const res = await axios.get('/api/content/news')
+        setNews(res.data)
+    }, [])
     
 
     return(

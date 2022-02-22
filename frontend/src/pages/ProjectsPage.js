@@ -13,8 +13,8 @@ export const ProjectsPage = () => {
         
         return (
             props.map( (item, index) => {
-                const {title, description} = item
-                return <ProjectsCard title={title} description={description} image='https://sun9-11.userapi.com/impg/Z6HhCe-ruZ7sIcae-kD5Xjlsh5SM7UKV-1taYQ/pHN2WbFo9wA.jpg?size=2560x1707&quality=95&sign=bfe8cf8a33fe909463028a85b14dbc38&type=album' key={index} index={index}/>
+                const {title, description, image} = item
+                return <ProjectsCard title={title} description={description} image={image} key={index} index={index}/>
             })
         )
     }

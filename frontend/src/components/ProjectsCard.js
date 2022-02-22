@@ -5,18 +5,10 @@ export const ProjectsCard = (props) => {
     const isOdd = props.index % 2 !== 0
 
 
-    const cardStyle = () => {
-
-        if (isOdd) {
-            return ({
-                background: 'url(' + props.image + ') 50% 50%/auto auto no-repeat',
-                margin: '0 0 50px 100px'
-            })
+    const cardStyle = (image) => {
+        return {
+            background: 'url(' + image + ') 50% 50%/100% auto no-repeat'
         }
-
-        return ({
-            background: 'url(' + props.image + ') 50% 50%/auto auto no-repeat',
-        })
     }
 
    const rowReverse = {
@@ -26,9 +18,10 @@ export const ProjectsCard = (props) => {
 
     return (
         <div className="projects-content">
-            <div className="projects-card" style={isOdd ? rowReverse : null}>
+            <div className={"projects-card " + (isOdd ? "projects-card-reversed" : null)} >
 
-            <div style={cardStyle()} className="projects-thumb" id="projects-thumb">
+            
+            <div style={cardStyle(props.image)} className={"projects-thumb " + (isOdd ? "projects-thumb-reversed" : null)}>
             </div>
 
             <div className="projects-text" style={{order: 1}}>

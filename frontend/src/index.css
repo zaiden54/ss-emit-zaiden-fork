@@ -614,7 +614,6 @@ body {
 }
 .projects-thumb {
   width: 715px;
-  min-width: 400px;
   min-height: 445px;
   border-radius: 30px;
   margin: 0 100px 50px 0;
@@ -657,17 +656,25 @@ body {
   font-size: 15px;
 }
 
+.projects-card-reversed {
+  flex-direction: row-reverse;
+}
+
+.projects-thumb-reversed {
+  margin: 0 0 50px 100px;
+}
+
 /* Projects adaptive */
 
-@media screen and (max-width: 755px) {
-  .projects-thumb {
-    min-width: 300px;
-    width: auto;
+@media screen and (max-width: 1325px) {
+  .projects-thumb, .projects-thumb-reversed {
+    /* max-width: 300px; */
+    width: 200px;
     margin: 0 0 50px 0;
   }
 
   .projects-description {
-    width: auto;
+    width: 90vw;
   }
 
 }
