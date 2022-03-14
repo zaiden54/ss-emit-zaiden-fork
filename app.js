@@ -10,7 +10,7 @@ app.use('/api/content', require('./routes/content.routes'))
 
 const start = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_DB)
+        await mongoose.connect("mongodb+srv://snickersnasian:Moscow2021@cluster0.vtwol.mongodb.net/ss-emit?retryWrites=true&w=majority")
         console.log('Successful DB connection')
 
         app.listen(PORT, () => {console.log(`App started on port ${PORT}`)})
