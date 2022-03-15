@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { NewsCard } from './NewsCard'
 import {useHttp} from '../hooks/http.hooks'
+import { Spinner } from './Spinner'
 
 export const News = () => {
 
@@ -9,6 +10,11 @@ export const News = () => {
     const [news, setNews] = useState([])
 
     const renderNews = (news) => {
+        if (loading) {
+            return (
+                <Spinner />
+            )
+        }
         return news.map((item, index) => {
             return(
                 <NewsCard
