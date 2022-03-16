@@ -1,6 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react"
+import { useHttp } from '../hooks/http.hooks'
 
 export const Login = () => {
+
+    const { request } = useHttp()
 
     const [passwordVisibility, setPasswordVisibility] = useState(false)
     const [loginVisibility, switchLogin] = useState(true)
@@ -50,12 +53,17 @@ export const Login = () => {
         })
     }
 
+    const sendForm = (form) => {
+        request('/api/auth/register', 'post', form)
+    }
+
     const sendAuthForm = () => {
+        sendForm(authForm)
         console.log(authForm);
     }
 
     const sendRegForm = () => {
-        console.log(regForm);
+        sendForm(regForm)
     }
 
     return (
