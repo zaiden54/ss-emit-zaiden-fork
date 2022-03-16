@@ -722,7 +722,7 @@ body {
   font-weight: 500;
   font-size: 36px;
   line-height: 36px;
-  
+  cursor: pointer;
 }
 
 .auth-text {
