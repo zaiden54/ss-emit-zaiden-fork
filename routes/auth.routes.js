@@ -55,7 +55,7 @@ router.post(
 router.post(
     '/login',
     [
-        check('login', 'Введен некорректный логин').normalizeEmail().isEmail(),
+        check('login', 'Введен некорректный логин').normalizeEmail({ gmail_remove_dots: false }).isEmail(),
         check('password', 'Введите пароль').exists()
     ],
     async(req, res) => {
