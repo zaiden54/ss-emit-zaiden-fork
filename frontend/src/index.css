@@ -679,3 +679,176 @@ body {
 
 }
 
+/* Login */
+
+.Login {
+  width: 100%;
+  height: 100%;
+
+  background: #000;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.login-block {
+  background: url('../src/media/images/login-img.svg');
+
+  width: 1250px;
+  height: 600px;
+
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: right;
+}
+
+.auth-block {
+  background: #000;
+
+  width: 630px;
+  height: 600px;
+  border-radius: 40px;
+
+  border: 1px solid #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-header p{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 36px;
+  
+}
+
+.auth-text {
+  color: #fff;
+}
+
+.login-header {
+  /* margin-top: 150px; */
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+  color: #c4c4c4;
+  cursor: pointer;
+}
+
+.auth-login {
+  width: 405px;
+  height: 43px;
+
+  padding-left: 15px;
+
+  background: #EDF0F7;
+  border: 1px solid #898989;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  display: block;
+}
+
+.auth-password {
+  width: 405px;
+  height: 43px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+
+  background: #EDF0F7;
+  border: 1px solid #898989;
+  border-radius: 10px;
+  display: block;
+}
+
+.reg-block-content {
+  display: none;
+}
+
+.auth-block-content {
+  display: none;
+}
+
+.auth-visible {
+  display: block;
+}
+
+.auth-button {
+  width: 405px;
+  height: 43px;
+
+  background: #CB0A00;
+  border-radius: 10px;
+}
+
+.auth-button p {
+  font-style: normal;
+  font-weight: 550;
+  font-size: 18px;
+  line-height: 18px;
+
+  color: #FFFFFF;
+}
+
+.auth-login::placeholder,.auth-password::placeholder {
+  font-style: normal;
+  font-weight: 550;
+  font-size: 14px;
+  line-height: 14px;
+  color: #B4B4B4;
+}
+
+.password-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+
+.password-input p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.reg-header {
+  /* margin-top: 150px; */
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Login Adaptive */
+
+@media screen and (max-width: 900px) {
+  .auth-block{
+    width: 100%;
+    padding: 40px;
+    /* max-width: 1000px; */
+  }
+  .auth-wrapper input {
+    width: 100%;
+  }
+
+  .auth-wrapper {
+    width: 100%;
+  }
+
+  .auth-button {
+    width: 100%;
+  }
+
+  .login-header p {
+    font-size: 20px;
+  }
+
+  .login-block {
+    justify-content: center;
+    background: #000;
+  }
+}
