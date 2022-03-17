@@ -18,6 +18,7 @@ router.post(
         // console.log(req.body)
         const errors = validationResult(req)
 
+
         if(!errors.isEmpty()) {
             return res.status(400).json({
                 errors: errors.array(),
@@ -26,6 +27,8 @@ router.post(
         }
 
         const {name, login, password} = req.body
+
+        
 
         const candidate = await Users.findOne({ login })
 
@@ -42,7 +45,7 @@ router.post(
 
         await user.save()
 
-        req.status(201).json({ message: 'Пользователь создан' })
+        res.status(201).json({ message: 'Пользователь создан' })
 
     } catch (e) {
         res.json({ message: e.message })
@@ -68,7 +71,7 @@ router.post(
     
             const {login, password} = req.body
 
-            const user = await User.findOne({ login })
+            const user = await Users.findOne({ login })
 
             if (!user) {
                 return res.status(400).json({ message: 'Пользователь не найден' })
