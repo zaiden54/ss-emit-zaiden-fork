@@ -73,7 +73,7 @@ router.post(
 
             const user = await Users.findOne({ login: login })
 
-            console.log(req.body)
+            // console.log(user)
 
             if (!user) {
                 return res.status(400).json({ message: 'Пользователь не найден' })
@@ -87,14 +87,17 @@ router.post(
 
             const token = jwt.sign(
                 { 
-                    email: user.login ,
+                    userId: user.id ,
                     easterEgg: 'ты пидор'
                 },
                 process.env.JWT_SECRET,
                 { expiresIn: '1h' }
             )
 
-            res.json({ token, login })
+            res.json({ 
+                token, 
+                userId: user.id
+            })
 
 
         } catch (e) {

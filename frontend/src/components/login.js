@@ -57,12 +57,12 @@ export const Login = () => {
         request('/api/auth/register', 'post', form)
     }
 
-    const sendAuthForm = () => {
-        sendForm(authForm)
-        console.log(authForm);
+    const loginHandler = async () => {
+        const data = await request('/api/auth/login', 'post', authForm)
+        console.log(data)
     }
 
-    const sendRegForm = () => {
+    const sendRegForm = async () => {
         sendForm(regForm)
     }
 
@@ -80,7 +80,7 @@ export const Login = () => {
                         <div className={"auth-block-content " + (loginVisibility ? 'auth-visible' : '')}>
                             <input className="auth-login" name='login' type="email" placeholder="Почта*" onChange={handleAuthChange}/>
                             <div className="password-input"><input className="auth-password" type={passwordVisibility ? 'text' : 'password'} placeholder="Пароль*" onChange={handleAuthChange} name='password'/><p onClick={showPassword}>Показать пароль</p></div>
-                            <button className="auth-button"><p onClick={sendAuthForm}>Войти</p></button>
+                            <button className="auth-button"><p onClick={loginHandler}>Войти</p></button>
                         </div>
                         
                         <div className={"reg-block-content " + (loginVisibility ? '' : 'auth-visible')}>
