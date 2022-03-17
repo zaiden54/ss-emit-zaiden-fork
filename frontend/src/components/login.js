@@ -1,9 +1,11 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
+import { AuthContext } from "../contexts/AuthContext"
 import { useHttp } from '../hooks/http.hooks'
 
 export const Login = () => {
 
     const { request } = useHttp()
+    const auth = useContext(AuthContext)
 
     const [passwordVisibility, setPasswordVisibility] = useState(false)
     const [loginVisibility, switchLogin] = useState(true)
@@ -53,17 +55,25 @@ export const Login = () => {
         })
     }
 
-    const sendForm = (form) => {
-        request('/api/auth/register', 'post', form)
-    }
-
     const loginHandler = async () => {
-        const data = await request('/api/auth/login', 'post', authForm)
-        console.log(data)
+        // console.log(data)
+        try {
+            const data = await request('/api/auth/login', 'post', authForm)
+            auth.login(data.token, data.userId)
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
-    const sendRegForm = async () => {
-        sendForm(regForm)
+    const registerHandler = async () => {
+        // console.log(data)
+        try {
+            const data = await request('/api/auth/register', 'post', regForm)
+            // auth.login(data.token, data.userId)
+            console.log(data);
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     return (
@@ -87,7 +97,7 @@ export const Login = () => {
                             <input className="auth-login" type="text" placeholder="ФИО*" name='name' onChange={handleRegChange}/>
                             <input className="auth-login" type="email" placeholder="Почта*" name='email' onChange={handleRegChange}/>
                             <div className="password-input"><input className="auth-password" type={passwordVisibility ? 'text' : 'password'} placeholder="Пароль*" name='password' onChange={handleRegChange}/><p onClick={showPassword}>Показать пароль</p></div>
-                            <button className="auth-button"><p onClick={sendRegForm}>Регистрация</p></button>
+                            <button className="auth-button"><p onClick={registerHandler}>Регистрация</p></button>
                         </div>
                     </div>
 
