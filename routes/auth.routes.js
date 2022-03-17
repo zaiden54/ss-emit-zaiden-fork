@@ -86,7 +86,10 @@ router.post(
             }
 
             const token = jwt.sign(
-                { email: user.login },
+                { 
+                    email: user.login ,
+                    easterEgg: 'ты пидор'
+                },
                 process.env.JWT_SECRET,
                 { expiresIn: '1h' }
             )

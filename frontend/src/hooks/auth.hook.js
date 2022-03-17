@@ -23,10 +23,16 @@ export const useAuth = () => {
             login(data.token, data.userId)
         }
 
-    })
+    }, [login])
 
     const logout = useCallback( () => {
-        
+        setToken(тгдд)
+        setUserId(тгдд)
+
+        localStorage.setItem('userData', JSON.stringify({
+            token: jwtToken,
+            userId: id
+        }))
     }, [])
 
 

@@ -4,7 +4,8 @@ import { useRoutes } from './routes'
 
 function App() {
 
-  const route = useRoutes()
+  const isAuthenticated = false
+  const route = useRoutes(isAuthenticated)
 
   return (
       <div>
