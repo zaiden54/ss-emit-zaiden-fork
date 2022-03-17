@@ -55,7 +55,7 @@ router.post(
 router.post(
     '/login',
     [
-        check('login', 'Введен некорректный логин').normalizeEmail().isEmail(),
+        check('login', 'Введен некорректный логин').normalizeEmail({ gmail_remove_dots: false }).isEmail(),
         check('password', 'Введите пароль').exists()
     ],
     async(req, res) => {
@@ -71,7 +71,9 @@ router.post(
     
             const {login, password} = req.body
 
-            const user = await Users.findOne({ login })
+            const user = await Users.findOne({ login: login })
+
+            console.log(req.body)
 
             if (!user) {
                 return res.status(400).json({ message: 'Пользователь не найден' })
