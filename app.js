@@ -5,12 +5,19 @@ const app = express()
 const bodyParser = require('body-parser')
 const PORT = 5000 || process.env.PORT
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 app.use('/api/content', require('./routes/content.routes'))
+app.use('/api/auth', require('./routes/auth.routes'))
+app.use('/api/user', require('./routes/user.routes'))
+
+app.get('/', (req, res) => {
+    res.send('я в бэке')
+})
 
 const start = async () => {
     try {
-        await mongoose.connect("mongodb+srv://snickersnasian:Moscow2021@cluster0.vtwol.mongodb.net/ss-emit?retryWrites=true&w=majority")
+        await mongoose.connect(process.env.MONGO_DB)
         console.log('Successful DB connection')
 
         app.listen(PORT, () => {console.log(`App started on port ${PORT}`)})
