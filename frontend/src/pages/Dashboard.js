@@ -25,7 +25,7 @@ export const DashBoard = (props) => {
     useEffect( async () => {
 
         const data = JSON.parse(localStorage.getItem('userData'))
-
+        console.log(data.userId)
         const userData = await request('/api/user/info?userId=' + data.userId)
 
         setUser({
