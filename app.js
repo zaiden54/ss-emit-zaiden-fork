@@ -1,6 +1,5 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const path = require("path")
 const app = express()
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 5000
@@ -18,10 +17,10 @@ const start = async () => {
         await mongoose.connect(process.env.MONGO_DB)
         console.log('Successful DB connection')
 
-        app.use(express.static(path.join(__dirname, "frontend", "build")))
+        app.use(express.static(__dirname + "/frontend/build"))
 
         app.get("*", (req, res) => {
-            res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+            res.sendFile(__dirname + "/frontend/build/index.html")
         })
 
         app.listen(PORT, () => {console.log(`App started on port ${PORT}`)})
