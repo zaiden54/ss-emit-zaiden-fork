@@ -8,8 +8,6 @@ router.get( '/info', async (req, res) => {
     try {
         const { userId } = req.query
 
-        console.log(userId)
-
         const user = await Users.findOne({ _id: userId} )
 
         res.send(user)

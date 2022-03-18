@@ -44,9 +44,18 @@ router.post(
 
         const data = await user.save()
 
-        console.log(data.id)
+        // console.log(data.id)
 
-        res.status(201).json({ message: 'Пользователь создан' })
+        const token = jwt.sign(
+            { 
+                userId: data.id ,
+                easterEgg: 'ты пидор'
+            },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        )
+
+        res.status(201).json({ message: 'Пользователь создан', token: token, userId: data.id })
 
     } catch (e) {
         res.json({ message: e.message })

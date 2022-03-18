@@ -8,7 +8,7 @@ function App() {
   const { login, logout, userId, token } = useAuth()
 
   const isAuthenticated = !!token
-  console.log(isAuthenticated)
+  // console.log(isAuthenticated)
   const route = useRoutes(isAuthenticated)
 
   return (
