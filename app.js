@@ -20,6 +20,7 @@ const start = async () => {
 
         
         app.use(express.static(path.resolve(process.cwd(), 'build')))
+        
         app.get('*', (req, res) => {
             res.sendFile(path.resolve(process.cwd(), 'build/index.html'))
         })
