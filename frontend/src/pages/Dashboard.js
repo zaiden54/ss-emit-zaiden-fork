@@ -1,13 +1,15 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import { BigTitle } from "../components/BigTitle"
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { useHttp } from "../hooks/http.hooks"
+import { AuthContext } from '../contexts/AuthContext'
 
 
 export const DashBoard = (props) => {
 
     const { request } = useHttp()
+    const auth = useContext(AuthContext)
 
     const [user, setUser] = useState({
         name: '',
@@ -34,7 +36,7 @@ export const DashBoard = (props) => {
             mail: userData.login
         })
 
-    }, [])
+    })
 
     return(
         <div className="dashboard">
@@ -42,6 +44,11 @@ export const DashBoard = (props) => {
             <div className="">
                 <BigTitle title={'Личный кабинет'} />
                 <BigTitle title={user.name} />
+                <div className="logout-button">
+                    <button onClick={() => {
+                        auth.logout()
+                    }}>Выйти</button>
+                </div>
             </div>
             <Footer />
         </div>

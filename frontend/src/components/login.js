@@ -69,8 +69,8 @@ export const Login = () => {
         // console.log(data)
         try {
             const data = await request('/api/auth/register', 'POST', regForm)
-            // auth.login(data.token, data.userId)
-            console.log(data);
+            auth.login(data.token, data.userId)
+            // console.log(data);
         } catch (error) {
             console.log(error.message);
         }
