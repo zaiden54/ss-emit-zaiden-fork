@@ -29,7 +29,6 @@ export const News = () => {
 
     useEffect( async () => {
         const res = await request('/api/content/news')
-        console.log(res)
         setNews(res)
     }, [])
     
