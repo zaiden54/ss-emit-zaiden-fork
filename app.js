@@ -19,10 +19,13 @@ const start = async () => {
         console.log('Successful DB connection')
 
 
-        app.use(express.static(__dirname + "/frotend/build"))
+        // ... other app.use middleware 
+        app.use(express.static(path.join(__dirname, "frontend", "build")))
 
+        // ...
+        // Right before your app.listen(), add this:
         app.get("*", (req, res) => {
-            res.sendFile(__dirname + "/frontend/build/index.html")
+            res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
         })
 
         app.listen(PORT, () => {console.log(`App started on port ${PORT}`)})

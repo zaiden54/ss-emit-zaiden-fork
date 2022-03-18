@@ -36,7 +36,7 @@ export const DashBoard = (props) => {
             mail: userData.login
         })
 
-    }, )
+    }, [])
 
     return(
         <div className="dashboard">
