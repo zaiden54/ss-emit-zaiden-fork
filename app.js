@@ -18,19 +18,12 @@ const start = async () => {
         await mongoose.connect(process.env.MONGO_DB)
         console.log('Successful DB connection')
 
-        
-        app.use(express.static(path.resolve(process.cwd(), 'build')))
-        
-        app.get('*', (req, res) => {
-            res.sendFile(path.resolve(process.cwd(), 'build/index.html'))
+
+        app.use(express.static(__dirname + "/frotend/build"))
+
+        app.get("*", (req, res) => {
+            res.sendFile(__dirname + "/frontend/build/index.html")
         })
-       
-
-        // app.use(express.static(__dirname + "/build"))
-
-        // app.get("*", (req, res) => {
-        //     res.sendFile(__dirname + "/build/index.html")
-        // })
 
         app.listen(PORT, () => {console.log(`App started on port ${PORT}`)})
     } catch (err) {
