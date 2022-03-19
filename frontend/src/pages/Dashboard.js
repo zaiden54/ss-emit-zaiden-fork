@@ -24,19 +24,23 @@ export const DashBoard = (props) => {
         })
     }
 
-    useEffect( async () => {
+    useEffect( () => {
 
-        const data = JSON.parse(localStorage.getItem('userData'))
-        console.log(data.userId)
-        const userData = await request('/api/user/info?userId=' + data.userId)
+        setTimeout( async () => {
+            const data = JSON.parse(localStorage.getItem('userData'))
+            console.log(data.userId)
+            const userData = await request('/api/user/info?userId=' + data.userId)
 
-        setUser({
-            ...user,
-            name: userData.name,
-            mail: userData.login
-        })
+            if (userData) {
+                setUser({
+                    ...user,
+                    name: userData.name,
+                    mail: userData.login
+                })
+            }
+        }, 500)
 
-    })
+    }, [])
 
     return(
         <div className="dashboard">

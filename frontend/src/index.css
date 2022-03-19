@@ -861,6 +861,7 @@ body {
 
 .big-title{
   font-size: 60px;
+  line-height: 60px;
   max-width: 1260px;
   margin: 0 auto 70px auto;
   display: flex;
@@ -877,10 +878,10 @@ body {
 }
 
 .logout-button button {
-  width: 150px;
+  width: 120px;
   background: #CB0A00;
-  border-radius: 50px;
-  height: 100px;
+  border-radius: 25px;
+  height: 50px;
   font-size: 20px;
   color: white;
 }
