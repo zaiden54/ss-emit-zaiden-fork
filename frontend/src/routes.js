@@ -5,6 +5,7 @@ import { AboutPage } from "./pages/AboutPage"
 import { ProjectsPage } from "./pages/ProjectsPage"
 import { Auth } from "./pages/AuthPage"
 import { DashBoard } from "./pages/Dashboard"
+import { PageInDevelopment } from "./pages/PageInDevelopment"
 
 export const useRoutes = (isAuthenticated) => {
 
@@ -14,7 +15,7 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path="/" element={<MainPage />}/>
                 <Route path="/about" element={<AboutPage />}/>
                 <Route path="/projects" element={<ProjectsPage />}/>
-                <Route path="*" element={<Navigate to='/' />}/>
+                <Route path="*" element={<PageInDevelopment />}/>
                 <Route path="/lk" element={<DashBoard />}/>
             </Routes>
         )
@@ -25,7 +26,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route path="/" element={<MainPage />}/>
             <Route path="/about" element={<AboutPage />}/>
             <Route path="/projects" element={<ProjectsPage />}/>
-            <Route path="*" element={<Navigate to='/' />}/>
+            <Route path="*" element={<PageInDevelopment />}/>
             <Route path="/lk" element={<Auth />}/>
         </Routes>
     )
