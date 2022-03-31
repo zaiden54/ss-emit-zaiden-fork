@@ -422,7 +422,7 @@ body {
     right: 1250px;
   }
   100% {
-    right: 0px;
+    right: 2500px;
   }
 }
 
@@ -633,6 +633,7 @@ body {
   text-transform: uppercase;
   font-weight: 550;
   font-size: 40px;
+  line-height: 40px;
   margin-bottom: 50px;
 }
 
@@ -675,6 +676,13 @@ body {
 
   .projects-description {
     width: 90vw;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .projects-thumb, .projects-thumb-reversed {
+    background-size: auto 100% !important;
   }
 
 }
@@ -861,6 +869,7 @@ body {
 
 .big-title{
   font-size: 60px;
+  line-height: 60px;
   max-width: 1260px;
   margin: 0 auto 70px auto;
   display: flex;
