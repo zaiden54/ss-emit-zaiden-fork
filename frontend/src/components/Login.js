@@ -4,7 +4,7 @@ import { useHttp } from '../hooks/http.hooks'
 
 export const Login = () => {
 
-    const { request } = useHttp()
+    const { request, error, clearError } = useHttp()
     const auth = useContext(AuthContext)
 
     const [passwordVisibility, setPasswordVisibility] = useState(false)
@@ -60,8 +60,8 @@ export const Login = () => {
         try {
             const data = await request('/api/auth/login', 'POST', authForm)
             auth.login(data.token, data.userId)
-        } catch (error) {
-            console.log(error.message);
+        } catch (err) {
+            alert(error)
         }
     }
 
@@ -71,8 +71,12 @@ export const Login = () => {
             const data = await request('/api/auth/register', 'POST', regForm)
             auth.login(data.token, data.userId)
             // console.log(data);
-        } catch (error) {
-            console.log(error.message);
+
+            
+
+        } catch (err) {
+
+            alert(error)
         }
     }
 
