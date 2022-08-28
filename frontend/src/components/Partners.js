@@ -20,6 +20,7 @@ export const Partners = () => {
         
     )
 }
+
 export const PartnersDiscount = () => {
 
     const PartnersDiscountImage=[
@@ -36,11 +37,12 @@ export const PartnersDiscount = () => {
             <div class="PartnersDiscount">
                 {PartnersDiscountImage.map(item => <PartnersDiscountCarousel key={item.img} img={item.img} />)}
             </div>
-            <button class='button-slideleft'><span>сюdddddddddddddddddddddddddddddddddddddddда</span></button>
+            <button class='button-slideleft'><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nisi tenetur id deleniti consequuntur! Dicta nemo quasi aspernatur optio eum.</span></button>
             <button class='button-slideright'><span>тnnnnnnnnnnnnnnnnnnnnnnnуда</span></button>
         </div>
     )
 }
+
 export const PartnersCards = () => {
     const PartnersList=[
         {"img":topstr, "title":"додо пицца с4 вкусная"},
@@ -50,9 +52,6 @@ export const PartnersCards = () => {
         {"img":strel, "title":"додо3 самая21 312 32 12 321 321 32 434wfesrwefw 23 r 3r 23re 23r 3r 23er23er 2q323423 ed23 лучшая"},
         {"img":"", "title":"3"},
         {"img":mart, "title":"додо пицца самая лучшая"},
-
-
-
     ]
     return(
         <div class="PartnerCard">
@@ -61,10 +60,13 @@ export const PartnersCards = () => {
         </div>
     )
 }
+
 export const PartnersRegistration = () => {
     return(
         <div>
-            <div class="PartnersLetterText">КАК С НАМИ СВЯЗАТЬСЯ</div>
+            <div class="PartnersLetterText">
+                <span>КАК С НАМИ СВЯЗАТЬСЯ</span>
+            </div>
             <div class="PartnersLetter1 PartnersLetter"></div>
             <div class="PartnersLetter2 PartnersLetter"></div>
             <div class="PartnersLetter3 PartnersLetter"></div>
@@ -73,7 +75,7 @@ export const PartnersRegistration = () => {
             <div class="PartnersLetter6 PartnersLetter"></div>
             <div class="PartnersLetter7 PartnersLetter"></div>
             <div class="PartnersLetter">
-                <form action='#' method='get'>
+                <form action='#' class='partners-form' method='get'>
                     <label class="form-control-placeholder" for="name">Имя</label>
                     <input type="text" name='Имя'/>
                     <label class="form-control-placeholder" for="name">e-mail</label>
