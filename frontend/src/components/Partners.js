@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { PartnerCard } from "./PartnerCard";
 import pekarnya from "../media/images/pekarnya.png";
 import mart from "../media/images/mart.jpg";
@@ -25,7 +25,7 @@ export const Partners = () => {
 };
 
 export const PartnersDiscount = () => {
-  let offset = 0;
+  let offset = 0, carouselLen = 0
 
   const PartnersDiscountImage = [
     { img: a1 },
@@ -33,37 +33,45 @@ export const PartnersDiscount = () => {
     { img: a3 },
   ];
 
-  let a = document.querySelector(".DiscountImages-container");
-  let pic = document.querySelector(".DicosountImage-container");
-  let carouselLen
+
+  const [a, setA] = useState(0)
+  const [pic, setPic] = useState(0)
+
+  useEffect(() => {
+    setA(document.querySelector(".DiscountImages-container"))
+    setPic(document.querySelector(".DicosountImage-container"))
+  }, [a, pic])
 
 
   const slideleft = () => {
     carouselLen = PartnersDiscountImage.length * (+pic.offsetWidth + +getComputedStyle(pic).marginRight.replace("px", ""))
+
     let offsetStep = +pic.offsetWidth + +getComputedStyle(pic).marginRight.replace("px", "") 
     offset -= offsetStep
 
-    console.log(offset, carouselLen)
 
     if (offset < 0) {
-      offset = carouselLen - offsetStep;
+      offset = carouselLen - offsetStep
     }
-
-    a.style.left = -offset + "px";
-  };
-  const slideright = () => {
-    carouselLen = PartnersDiscountImage.length * (+pic.offsetWidth + +getComputedStyle(pic).marginRight.replace("px", ""))
-    
-    offset += +pic.offsetWidth + +getComputedStyle(pic).marginRight.replace("px", "")
-
     console.log(offset, carouselLen)
 
+    a.style.left = -offset + "px";
+  }
+  const slideright = () => {
+    
+    carouselLen = PartnersDiscountImage.length * (+pic.offsetWidth + +getComputedStyle(pic).marginRight.replace("px", ""))
+
+    let offsetStep = +pic.offsetWidth + +getComputedStyle(pic).marginRight.replace("px", "")
+    offset += offsetStep
+    
     if (offset >= carouselLen) {
-      offset = 0;
+      offset = 0
     }
 
-    a.style.left = -offset + "px";
-  };
+    console.log(offset, offsetStep)
+
+    a.style.left = -offset + "px"
+  }
 
   return (
     <div className="Discount">
@@ -71,8 +79,8 @@ export const PartnersDiscount = () => {
             <div className='Shadow-l'></div> */}
       <div className="PartnersDiscount">
         <div className="DiscountImages-container">
-          {PartnersDiscountImage.map((item) => {
-            return <div className="DicosountImage-container"><img className="DiscountImage" src={item.img} alt="" /></div>;
+          {PartnersDiscountImage.map((item, index) => {
+            return <div key={index} className="DicosountImage-container"><img className="DiscountImage" src={item.img} alt="" /></div>;
           })}
         </div>
       </div>
@@ -113,9 +121,9 @@ export const PartnersCards = () => {
     <div className="PartnerCard">
       <div className="PartnersText">НАШИ ПАРТНЕРЫ</div>
       <div className="partners">
-        {PartnersList.map((item) => {
+        {PartnersList.map((item, index) => {
           return (
-            <PartnerCard key={item.title} img={item.img} span={item.title} />
+            <PartnerCard key={index} img={item.img} span={item.title} />
           );
         })}
       </div>
