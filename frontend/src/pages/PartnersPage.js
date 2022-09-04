@@ -9,14 +9,15 @@ import { Partners, PartnersCards, PartnersDiscount, PartnersRegistration } from 
 
 export const PartnersPage = () => {
     return (
-        <div>
+        <div className="parters-page__container">
             <Navbar />
             <BannerLoop image={textLoop} />
-            {/* <ScrollMenu /> */}
-            <Partners />
-            <PartnersDiscount/>
-            <PartnersCards />
-            <PartnersRegistration />
+            <div className="partners-page">
+                <Partners />
+                <PartnersDiscount/>
+                <PartnersCards />
+                <PartnersRegistration />
+            </div>
             <Footer />
         </div>
 

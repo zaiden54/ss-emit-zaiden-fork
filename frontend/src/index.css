@@ -888,9 +888,11 @@ body {
 /* Partners */
 /* PartnersFirstText */
 
-.PartnersMainText{
-  margin-left: 100px;
+.partners-page {
+  max-width: 1260px;
+  margin: 0 auto;
 }
+
 
 .PartnersMainText p{
   line-height: 75px;
@@ -917,16 +919,16 @@ body {
 
 .PartnersText{
   margin-bottom: 55px;
-  margin-top: 200px;
-  margin-left: 100px;
   font-family: 'Helvetica';
   font-size:40px;
+  line-height: 40px;
   font-weight: 550;
 }
 
 /* partnersCarousel */
 .Discount{
   overflow: hidden;
+  margin-bottom: 100px;
 }
 .Shadow-r{
   position: absolute;
@@ -945,23 +947,56 @@ body {
 
 }
 .PartnersDiscount{
-  width: max-content;
+  width: 100%;
+  min-height: 400px;
   display: flex;
   position: relative;
-  left: -790px;
-
-}
-.DiscountImage{
-  width: 800px;
-  margin-top: 80px;
-  margin-right: 75px;
-  margin-left: 75px;
+  transition: all ease 1s;
+  margin-bottom: 50px;
   overflow: hidden;
 }
+.DiscountImages-container{
+  position: relative;
+  display: flex;
+  transition: all ease 1s;
+  
+  left: 0;
+}
+
+.DiscountImage {
+
+}
+
+.DicosountImage-container {
+  max-width: 750px;
+  max-height: 550px;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 72px;
+  overflow: hidden;
+  border: 3px solid #A9A9A9;
+}
+
+
+/* Carousel adaptive */
+
+@media screen and (max-width: 600px) {
+  .DicosountImage-container {
+    width: 400px;
+    height: 350px;
+  }
+  
+}
+
 /* PartnersCard */
 /*   */
 .PartnerCard{
-  margin-left: 170px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .partners_card{
   display: inline;
@@ -1067,6 +1102,31 @@ body {
 }
 .PartnersLetter7{
   width: 63%;
+}
+
+.partners-control {
+  /* border: 1px solid red; */
+  display : flex;
+  justify-content: center;
+}
+
+.partners-btn-container {
+  min-width: 300px;
+  display : flex;
+  justify-content: space-between;
+}
+
+.partners-btn-container img{
+  height: 50px;
+}
+
+.partners-control button{
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
 
 /* partners letter form */
