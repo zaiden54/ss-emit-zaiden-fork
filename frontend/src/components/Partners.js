@@ -33,6 +33,7 @@ export const PartnersDiscount = () => {
     { img: a3 },
   ];
 
+  
 
   const [a, setA] = useState(0)
   const [pic, setPic] = useState(0)
@@ -53,7 +54,6 @@ export const PartnersDiscount = () => {
     if (offset < 0) {
       offset = carouselLen - offsetStep
     }
-    console.log(offset, carouselLen)
 
     a.style.left = -offset + "px";
   }
@@ -67,8 +67,6 @@ export const PartnersDiscount = () => {
     if (offset >= carouselLen) {
       offset = 0
     }
-
-    console.log(offset, offsetStep)
 
     a.style.left = -offset + "px"
   }
