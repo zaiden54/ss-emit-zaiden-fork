@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { MainPage } from './pages/MainPage'
 import { AboutPage } from "./pages/AboutPage"
 import { ProjectsPage } from "./pages/ProjectsPage"
+import { PartnersPage } from "./pages/PartnersPage"
 import { EventsPage } from "./pages/EventsPage"
 import { Auth } from "./pages/AuthPage"
 import { DashBoard } from "./pages/Dashboard"
