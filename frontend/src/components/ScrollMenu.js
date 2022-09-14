@@ -31,7 +31,7 @@ export const ScrollMenu = () => {
                 <div className="scroll-menu-options">
                     <div className="scroll-menu-item"><a href="">НАПРАВЛЕНИЯ ПРОЕКОВ</a></div>
                     <div className="scroll-menu-item"><a href="/projects">ПРОЕКТЫ</a></div>
-                    <div className="scroll-menu-item"><a href="">МЕРОПРИЯТИЯ</a></div>
+                    <div className="scroll-menu-item"><a href="/events">МЕРОПРИЯТИЯ</a></div>
                     <div className="scroll-menu-item"><a href="">ЦЕНТРЫ</a></div>
                     <div className="scroll-menu-item"><a href="">НАША ИСТОРИЯ</a></div>
                     <div className="scroll-menu-item"><a href="">АКТИВ ЭМИТ</a> </div>

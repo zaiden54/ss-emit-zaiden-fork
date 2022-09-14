@@ -18,10 +18,10 @@ export const ProjectsCard = (props) => {
 
     return (
         <div className="projects-content">
-            <div className={"projects-card " + (isOdd ? "projects-card-reversed" : null)} >
+            <div className={"projects-card " + (isOdd ? "projects-card-reversed" : '')} >
 
             
-            <div style={cardStyle(props.image)} className={"projects-thumb " + (isOdd ? "projects-thumb-reversed" : null)}>
+            <div style={cardStyle(props.image)} className={"projects-thumb " + (isOdd ? "projects-thumb-reversed" : '')}>
             </div>
 
             <div className="projects-text" style={{order: 1}}>

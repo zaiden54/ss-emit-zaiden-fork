@@ -8,6 +8,13 @@ export const Events = () => {
     const { loading, request, error, clearError } = useHttp()
 
     const displayEvents = (occasions) => {
+
+        if (!occasions) {
+            return(
+                <div className="">пока нет событий</div> 
+            )
+        }
+
         return (
             occasions.map( (item, index) => {
 

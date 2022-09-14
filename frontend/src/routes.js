@@ -3,9 +3,10 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import { MainPage } from './pages/MainPage'
 import { AboutPage } from "./pages/AboutPage"
 import { ProjectsPage } from "./pages/ProjectsPage"
+import { EventsPage } from "./pages/EventsPage"
 import { Auth } from "./pages/AuthPage"
 import { DashBoard } from "./pages/Dashboard"
-import { PartnersPage } from "./pages/PartnersPage"
+import { PageInDevelopment } from "./pages/PageInDevelopment"
 
 export const useRoutes = (isAuthenticated) => {
 
@@ -15,7 +16,8 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path="/" element={<MainPage />}/>
                 <Route path="/about" element={<AboutPage />}/>
                 <Route path="/projects" element={<ProjectsPage />}/>
-                <Route path="*" element={<Navigate to='/' />}/>
+                <Route path="/events" element={<EventsPage />}/>
+                <Route path="*" element={<PageInDevelopment />}/>
                 <Route path="/lk" element={<DashBoard />}/>
                 <Route path="/partners" element={<PartnersPage />}/>
             </Routes>
@@ -27,7 +29,7 @@ export const useRoutes = (isAuthenticated) => {
             <Route path="/" element={<MainPage />}/>
             <Route path="/about" element={<AboutPage />}/>
             <Route path="/projects" element={<ProjectsPage />}/>
-            <Route path="*" element={<Navigate to='/' />}/>
+            <Route path="*" element={<PageInDevelopment />}/>
             <Route path="/lk" element={<Auth />}/>
             <Route path="/partners" element={<PartnersPage />}/>
         </Routes>

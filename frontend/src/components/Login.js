@@ -1,6 +1,11 @@
-import React, {useState} from "react";
+import React, { useContext, useState } from "react"
+import { AuthContext } from "../contexts/AuthContext"
+import { useHttp } from '../hooks/http.hooks'
 
 export const Login = () => {
+
+    const { request, error, clearError } = useHttp()
+    const auth = useContext(AuthContext)
 
     const [passwordVisibility, setPasswordVisibility] = useState(false)
     const [loginVisibility, switchLogin] = useState(true)
@@ -10,7 +15,7 @@ export const Login = () => {
     })
     const [regForm, setRegForm] = useState({
         name:'',
-        email:'',
+        login:'',
         password:''
     })
 
@@ -50,12 +55,29 @@ export const Login = () => {
         })
     }
 
-    const sendAuthForm = () => {
-        console.log(authForm);
+    const loginHandler = async () => {
+        // console.log(data)
+        try {
+            const data = await request('/api/auth/login', 'POST', authForm)
+            auth.login(data.token, data.userId)
+        } catch (err) {
+            alert(error)
+        }
     }
 
-    const sendRegForm = () => {
-        console.log(regForm);
+    const registerHandler = async () => {
+        // console.log(data)
+        try {
+            const data = await request('/api/auth/register', 'POST', regForm)
+            auth.login(data.token, data.userId)
+            // console.log(data);
+
+            
+
+        } catch (err) {
+
+            alert(error)
+        }
     }
 
     return (
@@ -72,14 +94,14 @@ export const Login = () => {
                         <div className={"auth-block-content " + (loginVisibility ? 'auth-visible' : '')}>
                             <input className="auth-login" name='login' type="email" placeholder="Почта*" onChange={handleAuthChange}/>
                             <div className="password-input"><input className="auth-password" type={passwordVisibility ? 'text' : 'password'} placeholder="Пароль*" onChange={handleAuthChange} name='password'/><p onClick={showPassword}>Показать пароль</p></div>
-                            <button className="auth-button"><p onClick={sendAuthForm}>Войти</p></button>
+                            <button className="auth-button"><p onClick={loginHandler}>Войти</p></button>
                         </div>
                         
                         <div className={"reg-block-content " + (loginVisibility ? '' : 'auth-visible')}>
                             <input className="auth-login" type="text" placeholder="ФИО*" name='name' onChange={handleRegChange}/>
-                            <input className="auth-login" type="email" placeholder="Почта*" name='email' onChange={handleRegChange}/>
+                            <input className="auth-login" type="email" placeholder="Почта*" name='login' onChange={handleRegChange}/>
                             <div className="password-input"><input className="auth-password" type={passwordVisibility ? 'text' : 'password'} placeholder="Пароль*" name='password' onChange={handleRegChange}/><p onClick={showPassword}>Показать пароль</p></div>
-                            <button className="auth-button"><p onClick={sendRegForm}>Регистрация</p></button>
+                            <button className="auth-button"><p onClick={registerHandler}>Регистрация</p></button>
                         </div>
                     </div>
 

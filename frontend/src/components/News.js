@@ -10,11 +10,13 @@ export const News = () => {
     const [news, setNews] = useState([])
 
     const renderNews = (news) => {
-        if (loading) {
-            return (
-                <Spinner />
+
+        if (!news) {
+            return(
+                <div className="">пока нет новостей</div>
             )
         }
+        
         return news.map((item, index) => {
             return(
                 <NewsCard
