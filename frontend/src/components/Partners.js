@@ -100,20 +100,20 @@ export const PartnersDiscount = () => {
 export const PartnersCards = () => {
   const PartnersList = [
     { img: topstr, title: "додо пицца с4 вкусная" },
-    { img: "", title: "1" },
+    { img: "", title: "" },
     {
       img: pekarnya,
       title:
-        "",
+        "1",
     },
-    { img: "", title: "2" },
+    { img: "", title: "" },
     {
       img: strel,
       title:
-        "",
+        "1",
     },
-    { img: "", title: "3" },
-    { img: mart, title: "" },
+    { img: "", title: "" },
+    { img: mart, title: "1" },
   ];
   return (
     <div className="PartnerCard">
