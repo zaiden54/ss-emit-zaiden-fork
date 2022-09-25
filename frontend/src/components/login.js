@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react"
-import { AuthContext } from "../contexts/AuthContext"
+import React, { useState } from "react"
 import { useHttp } from '../hooks/http.hooks'
+import { useDispatch } from "react-redux"
+import { authActions } from "../redux/slices/authSlice"
 
 export const Login = () => {
+    const dispatch = useDispatch()
 
     const { request, error, clearError } = useHttp()
-    const auth = useContext(AuthContext)
 
     const [passwordVisibility, setPasswordVisibility] = useState(false)
     const [loginVisibility, switchLogin] = useState(true)
@@ -59,7 +60,17 @@ export const Login = () => {
         // console.log(data)
         try {
             const data = await request('/api/auth/login', 'POST', authForm)
-            auth.login(data.token, data.userId)
+  
+            dispatch(authActions.setAuth({
+                token: data.token,
+                userId: data.userId
+            }))
+
+            localStorage.setItem('userData', JSON.stringify({
+                token: data.token,
+                userId: data.userId
+            }))
+
         } catch (err) {
             alert(error)
         }
@@ -69,11 +80,17 @@ export const Login = () => {
         // console.log(data)
         try {
             const data = await request('/api/auth/register', 'POST', regForm)
-            auth.login(data.token, data.userId)
-            // console.log(data);
-
             
+            dispatch(authActions.setAuth({
+                token: data.token,
+                userId: data.userId
+            }))
 
+            localStorage.setItem('userData', JSON.stringify({
+                token: data.token,
+                userId: data.userId
+            }))
+            
         } catch (err) {
 
             alert(error)

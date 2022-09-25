@@ -3,13 +3,14 @@ import { BigTitle } from "../components/BigTitle"
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { useHttp } from "../hooks/http.hooks"
-import { AuthContext } from '../contexts/AuthContext'
+import { useDispatch } from "react-redux"
+import { authActions } from "../redux/slices/authSlice"
 
 
 export const DashBoard = (props) => {
 
     const { request } = useHttp()
-    const auth = useContext(AuthContext)
+    const dispatch = useDispatch()
 
     const [user, setUser] = useState({
         name: '',
@@ -28,7 +29,6 @@ export const DashBoard = (props) => {
 
         setTimeout( async () => {
             const data = JSON.parse(localStorage.getItem('userData'))
-            console.log(data.userId)
             const userData = await request('/api/user/info?userId=' + data.userId)
 
             if (userData) {
@@ -42,6 +42,11 @@ export const DashBoard = (props) => {
 
     }, [])
 
+    const handleLogout = () => {
+        dispatch(authActions.setAuth())
+        localStorage.clear('userData')
+    }
+
     return(
         <div className="dashboard">
             <Navbar />
@@ -49,9 +54,7 @@ export const DashBoard = (props) => {
                 <BigTitle title={'Личный кабинет'} />
                 <BigTitle title={user.name} />
                 <div className="logout-button">
-                    <button onClick={() => {
-                        auth.logout()
-                    }}>Выйти</button>
+                    <button onClick={handleLogout}>Выйти</button>
                 </div>
             </div>
             <Footer />

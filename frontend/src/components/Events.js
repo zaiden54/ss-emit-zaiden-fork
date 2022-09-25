@@ -19,7 +19,6 @@ export const Events = () => {
             occasions.map( (item, index) => {
 
                 const {title, date, time, location} = item
-
                 return (
                     <a href=''>
                         <EventsCard  
