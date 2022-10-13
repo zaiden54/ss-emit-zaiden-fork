@@ -4,7 +4,7 @@ import { Footer } from '../components/Footer'
 import { BannerLoop } from '../components/BannerLoop'
 // import { ScrollMenu } from '../components/ScrollMenu'
 import textLoop from '../media/images/partnerLoop.svg'
-import { Partners, PartnersCards, PartnersDiscount, PartnersRegistration } from '../components/Partners'
+import { Partners, PartnersCards, PartnersDiscount, PartnersRegistration} from '../components/Partners'
 
 
 export const PartnersPage = () => {
