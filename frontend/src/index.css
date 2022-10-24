@@ -936,7 +936,7 @@ body {
   line-height: 75px;
   text-align:left;
   margin-bottom: 30px;
-  font-size: 60px;
+  font-size: 370%;
   font-family: 'Helvetica';
   font-weight:normal;
 }
@@ -956,11 +956,11 @@ body {
 /* PartnersSecondText */
 
 .PartnersText{
-  margin-bottom: 55px;
+  margin-bottom: 100px;
   font-family: 'Helvetica';
   font-size:40px;
   line-height: 40px;
-  font-weight: 550;
+  font-weight:550;
 }
 
 /* partnersCarousel */
@@ -1019,23 +1019,6 @@ body {
 
 
 
-/* Carousel adaptive */
-
-@media screen and (max-width: 600px) {
-  .DicosountImage-container {
-    max-width: 75vw;
-    height: 250px;
-    border-radius: 50px;
-  }
-  
-  .PartnersDiscount {
-    min-height: 100px;
-    max-width: 75vw;
-  }
-  
-
-}
-
 /* PartnersCard */
 /*   */
 .PartnerCard{
@@ -1048,16 +1031,19 @@ body {
 .partners{
   display: flex;
   flex-wrap: wrap;
+  max-width: 1000px;
+  min-width: 300px;
 }
 
 .partners_card{
   color: #000;
   overflow: hidden;
-  border-radius: 20px;
-  width: 100px;
+  margin-top: 20px;
+  width: 10%;
   height: 100px;
   display: flex;
   align-items: center;
+  /* margin-right: 10%; */
 }
 
 .partners_card:last-child{
@@ -1069,38 +1055,46 @@ body {
   /* padding-top: 50px;
   padding-bottom: 50px;
   margin-left: 30px; */
-  width: 100px;
+  border-radius: 20%;
+  width: 100%;
   transition:ease-in-out 0.7s;
-  
+
 }
 .partners_card span{
-  display: none;
+  display: block;
+  width: 0px;
+
 }
 
-.partners_card:hover img{
+/* .partners_card:hover img{
   transform: scale(1.06);
   transition:ease-in-out 0.3s;
+} */
+@media screen and (min-width: 1200px){
+  .partners_card:hover span{
+    margin-left: 110px;
+    padding: 10px 10px 0px 10px;
+    position:absolute;
+    display:inline-block;
+    background-color: white;
+    font-size:medium;
+    margin-top: 30px;
+    height: 270px;
+    width: 250px;
+    border-radius: 20px;
+    animation: partners_span1 0.7s ease alternate forwards;
+  }
 }
 
-.partners_card:hover span{
-  margin-left: 110px;
-  padding-top: 10px;
-  padding-left: 10px;
-  position:absolute;
-  display:inline-block;
-  background-color: white;
-  margin-top: 30px;
-  height: 250px;
-  width: 250px;
-  border-radius: 20px;
-  animation: partners_span1 0.7s ease alternate forwards;
-}
+
 
 /* анимация выплывающего текста */
 @keyframes partners_span1{
   0%{
     width: 0%;
+    color: transparent;
   }
+
   100%{
     width: 250px;
   }
@@ -1111,7 +1105,7 @@ body {
 /* PartnersRegDesign */
 
 .PartnersLetterText{
-  margin-top: 200px;
+  margin-top: 10%;
   font-family: 'Helvetica';
   font-size:35px;
   font-weight: 500;
@@ -1131,7 +1125,7 @@ body {
   position:relative;
   margin: 80px auto;
   padding: 25px;
-  min-height: 350px;
+  min-height: 448px;
   /* min-width: 1260px; */
   border: 2px solid white; 
   border-radius: 20px;
@@ -1259,19 +1253,80 @@ body {
 }
 
 
-
 /* Partners button */
 
 .PartnersButton{
   height: 80px;
-  width: 300px;
+  width: 70%;
   position:relative;
   transform:translate(-50%, 0%);
   left: 50%;
-  margin: 0px auto 80px auto;
+  margin: 0px auto 0px auto;
   font-size: medium;
   background-color: #000;
   color: white;
   border: 2px solid white; 
   border-radius: 40px;
+}
+
+.showMassage{
+  display: none;
+  transform:translate(-50%, 0%);
+  left: 50%;
+  top:-25%;
+  position:absolute;
+  padding: 5%;
+  width: 100%;
+  /* height: 50%; */
+  color:limegreen;
+  background-color: #000;
+  border: 2px solid white; 
+  border-radius: 20px;
+  min-width: 10%;
+  font-size: 120%;
+  text-align: center;
+  transition: all 2s linear ;
+}
+@media screen and (max-width: 600px) {
+  .DicosountImage-container {
+    max-width: 75vw;
+    height: 250px;
+    border-radius: 50px;
+  }
+  
+  .PartnersDiscount {
+    min-height: 100px;
+    max-width: 75vw;
+  }
+  .partners{
+    margin-bottom: 80px;
+    display: inline;
+  }
+  .partners_card img{
+    width: 100px;
+  }
+  .partners_card{
+    height: 150px;
+    margin-top: 5px;
+    width:fit-content;
+  }
+  .partners_card span{
+    margin-left: 110px;
+    padding: 10px 10px 0px 10px;
+    position:absolute;
+    display:inline-block;
+    background-color: white;
+    font-size:small;
+    margin-top: 30px;
+    height: 280px;
+    width: 200px;
+    border-radius: 20px;
+    /* animation: partners_span1 0.7s ease alternate forwards; */
+  }
+  .PartnersButton{
+    height: 50px;
+    width: 110%;
+    font-size:small;
+    border-radius: 30px;
+  }
 }
