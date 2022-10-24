@@ -64,8 +64,9 @@ body {
   line-height: 18px;
   color: #FFFFFF;
   background: black;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   padding: 40px;
+  
 }
 
 
@@ -967,6 +968,9 @@ body {
 .Discount{
   overflow: hidden;
   margin-bottom: 100px;
+  width: 100vw;
+  position: relative;
+  left: -40px;
 }
 .Shadow-r{
   position: absolute;
@@ -993,6 +997,7 @@ body {
   transition: all ease 1s;
   margin-bottom: 50px;
   margin: 0 auto 30px auto;
+  box-shadow: inset 0 0 100pxrgb(0, 0, 0)0;
   /* overflow: hidden; */
 }
 
