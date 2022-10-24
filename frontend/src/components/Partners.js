@@ -86,7 +86,9 @@ export const PartnersDiscount = () => {
       <div className="PartnersDiscount">
         <div className="DiscountImages-container">
           {PartnersDiscountImage.map((item, index) => {
-            return <div key={index} className="DicosountImage-container"><img className="DiscountImage" src={item.img} alt="" /></div>;
+            return <div key={index} className="DicosountImage-container">
+                <img className="DiscountImage" src={item.img} alt="" />
+              </div>;
           })}
         </div>
       </div>
@@ -170,20 +172,12 @@ export const PartnersRegistration = () => {
       e.target.reset();
   };
   function showMassage(){
-    document.getElementById("showMassage").style.display = "block";
+    setDisplayMessage(true)
   }
 
-  // state={
-  //   inputMail:''
-  // }
+  const [displayMessage, setDisplayMessage] = useState(false)
 
-  // handleInputMailChange=({target:{value}})=>{
-  //   this.setState({
-  //     inputMail:value,
-  //   })
-  // }
 
-  // const{inputMail}=this.state
   return(
     <div>
     <div className="PartnersLetterText">
@@ -198,7 +192,12 @@ export const PartnersRegistration = () => {
     <div className="PartnersLetter7 PartnersLetter"></div>
     <div className="PartnersLetter">
       <form action="#" className="partners-form" method="get" ref={form} onSubmit={sendEmail}>
-        <div className='showMassage' id='showMassage'>Сообщение отправлено, проверьте почту!</div>
+        {
+          displayMessage ? 
+          <div className='showMassage' id='showMassage'>Сообщение отправлено, проверьте почту!</div> 
+          : ''
+        }
+        
         <label className="form-control-placeholder" for="name">
           Имя
         </label>

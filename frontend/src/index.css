@@ -945,7 +945,7 @@ body {
   display: block;
   font-weight: 100;
   text-align: left;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   font-size: 20px;
   line-height: 20px;
   font-family: 'Helvetica';
@@ -995,6 +995,7 @@ body {
   margin: 0 auto 30px auto;
   /* overflow: hidden; */
 }
+
 .DiscountImages-container{
   position: relative;
   display: flex;
@@ -1015,6 +1016,10 @@ body {
   border-radius: 72px;
   overflow: hidden;
   border: 3px solid #A9A9A9;
+}
+
+.DiscountImage {
+  height: 100%;
 }
 
 
@@ -1084,7 +1089,13 @@ body {
     border-radius: 20px;
     animation: partners_span1 0.7s ease alternate forwards;
   }
+
+  .DicosountImage-container {
+    min-width: 800px;
+    height: auto;
+  }
 }
+
 
 
 
@@ -1270,7 +1281,6 @@ body {
 }
 
 .showMassage{
-  display: none;
   transform:translate(-50%, 0%);
   left: 50%;
   top:-25%;
@@ -1287,11 +1297,28 @@ body {
   text-align: center;
   transition: all 2s linear ;
 }
+
+@media screen and (max-width: 1200px){
+
+  .DicosountImage-container {
+    min-width: 500px;
+    max-height: 340px;
+    border-radius: 40px;
+  }
+}
+
+
 @media screen and (max-width: 600px) {
   .DicosountImage-container {
-    max-width: 75vw;
-    height: 250px;
-    border-radius: 50px;
+
+    min-width: 0;
+    max-height: none;
+    
+    max-width: 73vw;
+    height: 200px;
+    border-radius: 30px;
+
+    
   }
   
   .PartnersDiscount {
@@ -1330,3 +1357,4 @@ body {
     border-radius: 30px;
   }
 }
+

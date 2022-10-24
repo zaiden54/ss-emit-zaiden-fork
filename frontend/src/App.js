@@ -14,7 +14,6 @@ function App() {
   
   const isAuthenticated = !!useSelector(state => state.auth.isAuthenticated)
 
-  console.log(isAuthenticated)
   const route = useRoutes(isAuthenticated)
 
   return (
