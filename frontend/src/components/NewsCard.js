@@ -13,25 +13,25 @@ export const NewsCard = (props) => {
 
     
 
-    const handleClick = () => {
+    // const handleClick = () => {
 
-        const handleClose = () => {
-            console.log("close")
-            setNewsSidePanel("")    
-        }
+    //     const handleClose = () => {
+    //         console.log("close")
+    //         setNewsSidePanel("")    
+    //     }
 
-        setNewsSidePanel(
-            <div className="side-panel-container">    
-                <div className="side-panel-menu">
-                    <div className="side-panel-title">{props.title.toUpperCase()}</div>
-                    <div className="side-panel-exit" onClick={handleClose}>Закрыть</div>
-                </div>
-            </div>
-        )
-    }
+    //     setNewsSidePanel(
+    //         <div className="side-panel-container">    
+    //             <div className="side-panel-menu">
+    //                 <div className="side-panel-title">{props.title.toUpperCase()}</div>
+    //                 <div className="side-panel-exit" onClick={handleClose}>Закрыть</div>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
     return (
-        <div style={cardStyle} onClick={handleClick} className="news__card">   
+        <div style={cardStyle}  className="news__card">   
             <div className="news-text">
                 <div className="news-hashtag">
                     {props.hashtag}
