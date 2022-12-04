@@ -5,7 +5,7 @@ import React, {useState} from 'react'
 
 export const NewsCard = (props) => {
 
-    const [newsSidePanel, setNewsSidePanel] = useState("")
+    // const [newsSidePanel, setNewsSidePanel] = useState("")
 
     const cardStyle = {
         background: 'url(' + props.image + ') 50% 50%/auto 100% no-repeat'
@@ -40,7 +40,7 @@ export const NewsCard = (props) => {
                     {props.title.toUpperCase()}
                 </div>
             </div>
-            {newsSidePanel}
+            {/* {newsSidePanel} */}
         </div>
     )
 }
