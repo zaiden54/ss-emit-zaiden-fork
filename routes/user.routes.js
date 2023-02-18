@@ -1,21 +1,18 @@
-const { Router } = require('express')
-const router = Router()
-const Users = require('../models/Users')
-
+const { Router } = require("express");
+const router = Router();
+const Users = require("../models/Users");
 
 // api/user/info
-router.get( '/info', async (req, res) => {
+router.get("/info", async (req, res) => {
     try {
-        const { userId } = req.query
+        const { userId } = req.query;
 
-        const user = await Users.findOne({ _id: userId} )
+        const user = await Users.findOne({ _id: userId });
 
-        res.send(user)
-
+        res.send(user);
     } catch (err) {
-        res.json({ error: err.message })
+        res.json({ error: err.message });
     }
-})
+});
 
-
-module.exports = router
+module.exports = router;

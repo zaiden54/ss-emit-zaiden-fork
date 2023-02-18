@@ -1,9 +1,9 @@
-import React from 'react'
-import { Navbar } from '../components/Navbar'
-import { Footer } from '../components/Footer'
-import { BannerLoop } from '../components/BannerLoop'
-import { ScrollMenu } from '../components/ScrollMenu'
-import textLoop from '../media/images/textLoop.svg'
+import React from "react";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { BannerLoop } from "../components/BannerLoop";
+import { ScrollMenu } from "../components/ScrollMenu";
+import textLoop from "../media/images/textLoop.svg";
 
 export const AboutPage = () => {
     return (
@@ -12,9 +12,8 @@ export const AboutPage = () => {
 
             <BannerLoop image={textLoop} />
             <ScrollMenu />
-            
+
             <Footer />
         </div>
-
-    )
-}
+    );
+};

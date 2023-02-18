@@ -1,16 +1,9 @@
-import React from "react"
-
-
-
-
+import React from "react";
 
 export const BigTitle = (props) => {
-
-    return(
+    return (
         <div className="big-title">
-            <p>
-               {props.title}
-            </p>
+            <p>{props.title}</p>
         </div>
-    )
-}
+    );
+};

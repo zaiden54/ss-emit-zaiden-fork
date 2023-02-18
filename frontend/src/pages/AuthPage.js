@@ -3,7 +3,6 @@ import { Footer } from "../components/Footer";
 import { Login } from "../components/Login";
 import { Navbar } from "../components/Navbar";
 
-
 export const Auth = () => {
     return (
         <div>
@@ -11,5 +10,5 @@ export const Auth = () => {
             <Login />
             <Footer />
         </div>
-    )
-}
+    );
+};

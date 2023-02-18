@@ -1,13 +1,12 @@
-import { Navbar } from '../components/Navbar'
-import React from 'react'
-import { News } from '../components/News'
-import { Events } from '../components/Events'
-import { Footer } from '../components/Footer'
-import { Useful } from '../components/Useful'
-
+import { Navbar } from "../components/Navbar";
+import React from "react";
+import { News } from "../components/News";
+import { Events } from "../components/Events";
+import { Footer } from "../components/Footer";
+import { Useful } from "../components/Useful";
 
 export const MainPage = () => {
-    return(
+    return (
         <div>
             <Navbar />
             <News />
@@ -15,5 +14,5 @@ export const MainPage = () => {
             <Useful />
             <Footer />
         </div>
-    )
-}
+    );
+};

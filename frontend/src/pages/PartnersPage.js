@@ -1,11 +1,10 @@
-import React from 'react'
-import { Navbar } from '../components/Navbar'
-import { Footer } from '../components/Footer'
-import { BannerLoop } from '../components/BannerLoop'
+import React from "react";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import { BannerLoop } from "../components/BannerLoop";
 // import { ScrollMenu } from '../components/ScrollMenu'
-import textLoop from '../media/images/partnerLoop.svg'
-import { Partners, PartnersCards, PartnersDiscount, PartnersRegistration} from '../components/Partners'
-
+import textLoop from "../media/images/partnerLoop.svg";
+import { Partners, PartnersCards, PartnersDiscount, PartnersRegistration } from "../components/Partners";
 
 export const PartnersPage = () => {
     return (
@@ -14,12 +13,11 @@ export const PartnersPage = () => {
             <BannerLoop image={textLoop} />
             <div className="partners-page">
                 <Partners />
-                <PartnersDiscount/>
+                <PartnersDiscount />
                 <PartnersCards />
                 <PartnersRegistration />
             </div>
             <Footer />
         </div>
-
-    )
-}
+    );
+};
