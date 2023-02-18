@@ -17,8 +17,8 @@
 		"prettier:fix": "npx prettier * --write"
 	},
 	"pre-commit": [
-		"lint",
-		"prettier"
+		"prettier:fix",
+		"lint"
 	],
 	"repository": {
 		"type": "git",
