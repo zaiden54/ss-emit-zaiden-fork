@@ -7,21 +7,21 @@ import { ProjectsCard } from "../components/ProjectsCard";
 import props from "../testDB/projects.json";
 
 export const ProjectsPage = () => {
-    const renderCards = (props) => {
-        return props.map((item, index) => {
-            const { title, description, image } = item;
-            return <ProjectsCard title={title} description={description} image={image} key={index} index={index} />;
-        });
-    };
+	const renderCards = (props) => {
+		return props.map((item, index) => {
+			const { title, description, image } = item;
+			return <ProjectsCard title={title} description={description} image={image} key={index} index={index} />;
+		});
+	};
 
-    return (
-        <div>
-            <Navbar />
-            <BannerLoop image={projectsLoop} />
+	return (
+		<div>
+			<Navbar />
+			<BannerLoop image={projectsLoop} />
 
-            {renderCards(props)}
+			{renderCards(props)}
 
-            <Footer />
-        </div>
-    );
+			<Footer />
+		</div>
+	);
 };

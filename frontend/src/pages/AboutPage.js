@@ -6,14 +6,14 @@ import { ScrollMenu } from "../components/ScrollMenu";
 import textLoop from "../media/images/textLoop.svg";
 
 export const AboutPage = () => {
-    return (
-        <div className="">
-            <Navbar />
+	return (
+		<div className="">
+			<Navbar />
 
-            <BannerLoop image={textLoop} />
-            <ScrollMenu />
+			<BannerLoop image={textLoop} />
+			<ScrollMenu />
 
-            <Footer />
-        </div>
-    );
+			<Footer />
+		</div>
+	);
 };

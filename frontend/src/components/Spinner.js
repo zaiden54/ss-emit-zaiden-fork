@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Spinner = (props) => {
-    return <div>loading...</div>;
+	return <div>loading...</div>;
 };

@@ -6,13 +6,13 @@ import { Footer } from "../components/Footer";
 import { Useful } from "../components/Useful";
 
 export const MainPage = () => {
-    return (
-        <div>
-            <Navbar />
-            <News />
-            <Events />
-            <Useful />
-            <Footer />
-        </div>
-    );
+	return (
+		<div>
+			<Navbar />
+			<News />
+			<Events />
+			<Useful />
+			<Footer />
+		</div>
+	);
 };
