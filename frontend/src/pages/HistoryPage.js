@@ -4,11 +4,11 @@ import { BlockWithBackground } from "../components/BlockWithBackground/BlockWith
 import { Footer } from "../components/Footer";
 
 export const HistoryPage = () => {
-    return (
-        <div>
-            <BlockWithBackground />
-            
-            <Footer />
-        </div>
-    );
+	return (
+		<div>
+			<BlockWithBackground />
+
+			<Footer />
+		</div>
+	);
 };
