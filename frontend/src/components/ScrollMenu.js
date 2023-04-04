@@ -34,7 +34,7 @@ export const ScrollMenu = () => {
 						<a href="">ЦЕНТРЫ</a>
 					</div>
 					<div className="scroll-menu-item">
-						<a href="">НАША ИСТОРИЯ</a>
+						<a href="/history">НАША ИСТОРИЯ</a>
 					</div>
 					<div className="scroll-menu-item">
 						<a href="">АКТИВ ЭМИТ</a>{" "}

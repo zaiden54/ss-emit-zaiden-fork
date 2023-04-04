@@ -1,6 +1,6 @@
 import React from "react";
 import VK from "../media/icons/VK.svg";
-import Inst from "../media/icons/Inst.svg";
+// import Inst from "../media/icons/Inst.svg";
 
 export const Footer = () => {
 	return (
@@ -132,11 +132,11 @@ export const Footer = () => {
 								<img src={VK} alt="" />
 							</a>
 						</div>
-						<div className="footer-contacts-item">
+						{/* <div className="footer-contacts-item">
 							<a href="https://instagram.com/smi_emit" target="_blank">
 								<img src={Inst} alt="" />
 							</a>
-						</div>
+						</div> */}
 						<div className="footer-contacts-item">
 							<a href="mailto:zaiden.ranepa@gmail.com">
 								<p>ssemit@gmail.com</p>
